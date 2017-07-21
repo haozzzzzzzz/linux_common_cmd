@@ -222,3 +222,52 @@ lsof -i :9000
 systemctl enable php-fpm.service
 ```
 
+## 测试
+
+在`/usr/share/nginx/html`目录加下创建一个`phpinfo.php`文件，然后添加一下代码
+
+````php
+<?php
+        phpinfo();
+?>
+````
+
+然后配置nginx的`/etc/nginx/conf.d/default.conf`，添加php处理。修改后文件内容类似
+
+````nginx
+server {
+    listen       80;
+    server_name  localhost;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/log/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+  
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    location ~ \.php$ {
+        root           /usr/share/nginx/html;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+
+}
+````
+
+然后`curl 127.0.0.1/phpinfo.php`页面就会出现phpinfo的页面html。
+
