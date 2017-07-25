@@ -222,6 +222,14 @@ lsof -i :9000
 systemctl enable php-fpm.service
 ```
 
+如果需要使用root用户运行的话，则可以将`/usr/local/php7/etc/php-fpm.d/www.conf`将`user`和`group`项修改为`root`，并使用允许php-fpm以root用户启动。将`php-fpm.service`改为
+
+````ini
+ExecStart=/usr/local/php7/sbin/php-fpm -R
+````
+
+> 其他配置参数请参考[systemd.service 中文手册](http://www.jinbuguo.com/systemd/systemd.service.html)
+
 ## 测试
 
 在`/usr/share/nginx/html`目录加下创建一个`phpinfo.php`文件，然后添加一下代码
