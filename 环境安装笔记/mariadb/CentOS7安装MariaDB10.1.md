@@ -51,3 +51,22 @@ Answer questions as below, and ensure that you will use your own MariaDB root pa
 - Disallow root login remotely? [Y/n]: `Y`
 - Remove test database and access to it? [Y/n]: `Y`
 - Reload privilege tables now? [Y/n]: `Y`
+
+
+
+## 远程登陆
+
+按照以上步骤，使用其他ip访问mariadb会报以下错误。
+
+```mysql
+Host '10.5.1.39' is not allowed to connect to this MariaDB server
+```
+
+所以需要设置以下root用户登陆的ip限制。
+
+```mysql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'10.5.1.%' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION; # 允许10.5.1.x下的ip访问。
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION; # 允许所有ip下的访问。
+```
+
