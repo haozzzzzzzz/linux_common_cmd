@@ -133,7 +133,7 @@ Installing phpdbg man page:       /usr/local/php7/php/man/man1/
 Installing PHP CGI binary:        /usr/local/php7/bin/
 Installing PHP CGI man page:      /usr/local/php7/php/man/man1/
 Installing build environment:     /usr/local/php7/lib/php/build/
-Installing header files:          /usr/local/php7/include/php/
+Installing header files:          /usr/local/php7/include/php/vi /
 Installing helper programs:       /usr/local/php7/bin/
   program: phpize
   program: php-config

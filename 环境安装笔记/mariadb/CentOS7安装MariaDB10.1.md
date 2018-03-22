@@ -21,7 +21,7 @@ EOF
 ## 使用YUM安装MariaDB
 
 ```shell
-sudo yum install MariaDB-server MariaDB-client -y
+sudo yum install mariadb mariadb-server mariadb-client -y
 ```
 
 
