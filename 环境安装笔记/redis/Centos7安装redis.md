@@ -10,3 +10,12 @@
 yum -y install redis
 ````
 
+
+
+### 配置远程访问
+
+```shell
+whereis redis #查找redis.conf文件
+在redis.conf后将127.0.0.1改为0.0.0.0访问
+```
+

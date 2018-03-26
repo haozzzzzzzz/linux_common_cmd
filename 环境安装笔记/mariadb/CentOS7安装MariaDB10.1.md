@@ -65,8 +65,11 @@ Host '10.5.1.39' is not allowed to connect to this MariaDB server
 所以需要设置以下root用户登陆的ip限制。
 
 ```mysql
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'10.5.1.%' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION; # 允许10.5.1.x下的ip访问。
+> use mysql;
 
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION; # 允许所有ip下的访问。
+> GRANT ALL PRIVILEGES ON *.* TO 'root'@'10.5.1.%' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION; # 允许10.5.1.x下的ip访问。
+
+> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'my-new-password' WITH GRANT OPTION; # 允许所有ip下的访问。
+> FLUSH PRIVILEGES;
 ```
 
