@@ -12,4 +12,4 @@ sudo supervisorctl start clrsrvhttp
 - stop 关闭
 - status 状态
 - tail 日志
-- reload 重新加载配置
+- reload 重新加载配置re
