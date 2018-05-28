@@ -86,3 +86,37 @@ eeooff
 
 
 
+
+
+# scp
+
+上传本地文件到服务器
+
+```shel
+scp /localpath/filename username@servername:/path/
+```
+
+
+
+从服务器下载文件
+
+```shell
+scp username@servername:/path/filename /localpath/
+```
+
+
+
+上传目录到服务器
+
+```shel
+scp -r /localpath/dir username@servername:/remote/dir
+```
+
+
+
+从服务器下载整个目录
+
+```shell
+scp -r username@servername:/remote/dir /localpath/dir
+```
+
