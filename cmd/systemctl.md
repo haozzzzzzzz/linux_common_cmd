@@ -33,7 +33,7 @@ systemctl --system daemon-reload # 更改配置后，重新加载配置
 Description=php-fpm 7
 After=network.target
 
-[Service]
+[Service]f
 Type=forking
 PIDFile=/usr/local/php7/var/run/php-fpm.pid
 ExecStart=/usr/local/php7/sbin/php-fpm
