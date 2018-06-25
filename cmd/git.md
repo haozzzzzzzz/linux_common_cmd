@@ -1,5 +1,7 @@
 # git命令
 
+##分支
+
 ```shell
 # 创建分支
 git branch <branch_name>
@@ -26,5 +28,39 @@ git merge <branch_name>
 ```sh
 # 删除分支
 git branch -d <branch_name>
+```
+
+
+
+根据tag建branch
+
+```
+git branch <branch_name> <tag_name>
+```
+
+
+
+
+
+## 标签
+
+```shell
+# 列出已有标签
+git tag
+
+# 过滤
+git tag -l "v1.4.2.*"
+
+# 标签有轻量级标签和含附注的标签，常用轻量级标签
+git tag v1.7-2018-06-15-1
+git show v1.7-2018-06-15-1
+
+# 删除
+git tag -d v1.7-2018-06-15-1
+
+# 推送
+git push origin v1.7-2018-06-15-1
+# 推送所有tags
+git push origin --tags
 ```
 

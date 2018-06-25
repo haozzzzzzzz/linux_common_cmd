@@ -18,11 +18,11 @@ typora-copy-images-to: ./pic_aws_ec2_auto_scaling
 
 - 添加标签。进入下一步。
 
-  | key        | value           |
-  | ---------- | --------------- |
-  | project    | videobuddy      |
-  | department | oversea         |
-  | Name       | vb-event-report |
+  | key        | value                   |
+  | ---------- | ----------------------- |
+  | project    | videobuddy              |
+  | department | oversea                 |
+  | Name       | vb-private-event-report |
 
 - 选择现有安全组sg-b15a6edavidbuddy app rule。点击审核和启动。
 
