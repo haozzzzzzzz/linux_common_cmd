@@ -107,6 +107,10 @@ CREATE DATABASE <database_name> DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_un
 ### 数据库用户授权
 
 ```shell
+# 查看授权
+SHOW GRANTS FOR <用户名>
+
+# 授权
 GRANT ALL PRIVILEGES ON `video_buddy_config`.* TO 'watchnow'@'%'
 ```
 

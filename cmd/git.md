@@ -5,6 +5,10 @@
 ```shell
 # 创建分支
 git branch <branch_name>
+
+# 根据分支建立分支
+git branch <new_branch_name> <exists_branch_name>
+
 # 进入分支
 git checkout <branch_name>
 ```
@@ -62,5 +66,6 @@ git tag -d v1.7-2018-06-15-1
 git push origin v1.7-2018-06-15-1
 # 推送所有tags
 git push origin --tags
+git push --tags
 ```
 
