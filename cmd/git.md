@@ -69,3 +69,15 @@ git push origin --tags
 git push --tags
 ```
 
+
+
+## 恢复
+
+```shell
+# 特定文件
+git checkout -- <文件名>
+
+# 当前所有更改
+git checkout --
+```
+

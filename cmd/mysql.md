@@ -46,6 +46,22 @@ mysqldump -u用户名 -p密码 数据库名 表名1 表名2 表名3 > 导出文�
 
 
 
+## 查询导出
+
+https://www.cnblogs.com/coderland/p/5902971.html
+
+```mysql
+SELECT ... FROM TABLE_A
+INTO OUTFILE "/path/to/file"
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+```
+
+
+
+
+
+
 ## 导入数据
 
 ```shell
@@ -114,3 +130,4 @@ SHOW GRANTS FOR <用户名>
 GRANT ALL PRIVILEGES ON `video_buddy_config`.* TO 'watchnow'@'%'
 ```
 
+ 
