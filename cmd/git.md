@@ -81,3 +81,19 @@ git checkout -- <文件名>
 git checkout --
 ```
 
+
+
+## 解决冲突
+
+```
+git checkout <文件名> # 使用远程文件
+```
+
+
+
+## 版本回滚
+
+```sh
+
+```
+

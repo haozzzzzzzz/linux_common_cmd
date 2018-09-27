@@ -49,8 +49,6 @@ typora-copy-images-to: ./pic_aws_ec2_auto_scaling
   | 可用区                 | 选择可用区ap-south-1a，子网subnet-574d243f（private-subnet-1a）；可用区ap-south-1b，子网subnet-c5cc1289(private-subnet-1b) |
   | 添加标签               | department、project、Name                                    |
 
-  
-
 - 点击配置安全设置，然后点击下一步配置安全组
 
 - 选择现有安全组sg-b15a6eda, vidbuddy app rule。点击下一步配置路由
@@ -135,8 +133,6 @@ typora-copy-images-to: ./pic_aws_ec2_auto_scaling
   | 网络   | 保持默认                           |
   | 子网   | subnet-574d243f,subnet-c5cc1289    |
 
-  
-
 - 填写高级详细信息
 
   | 配置项                  | 配置值                                   |
@@ -145,8 +141,6 @@ typora-copy-images-to: ./pic_aws_ec2_auto_scaling
   | 目标组                  | 选择刚才创建的目标组.如vb-private-config |
   | 运行状况检查类型        | 选择EC2                                  |
   | 启用CloundWatch详细监控 | 选择                                     |
-
-  
 
 - 点击下一步：配置扩展策略
 
@@ -166,7 +160,7 @@ typora-copy-images-to: ./pic_aws_ec2_auto_scaling
 - 点击下一步配置通知。
 - 点击添加通知。选择发送通知到alert，全选启动、终止、无法启动、无法终止
 - 点击下一步配置标签。project、department、name。
-- 创建完成后，记得将之前测试alb的主机衣橱，全部使用auto scaling创建的主机。
+- 创建完成后，记得将之前测试alb的主机移除，全部使用auto scaling创建的主机。
 
 
 

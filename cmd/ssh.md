@@ -86,6 +86,14 @@ eeooff
 
 
 
+**socks代理**
+
+```sh
+ssh -D 18200 luohao@xx.xxx.xx.xx
+```
+
+
+
 
 
 # scp
@@ -119,4 +127,8 @@ scp -r /localpath/dir username@servername:/remote/dir
 ```shell
 scp -r username@servername:/remote/dir /localpath/dir
 ```
+
+
+
+
 

@@ -29,19 +29,22 @@ show keys from table_name;
 
 ```shell
 # 导出表结构，加-d
-mysqldump -u用户名 -p密码 -d 数据库名 表名 > 导出文件名
+mysqldump -h 数据库链接 -u用户名 -p密码 -d 数据库名 表名 > 导出文件名
 
 # 导出数据库所有表结构，加-d
-mysqldump -u用户名 -p密码 -d 数据库名 > 导出文件名
+mysqldump -h 数据库链接 -u用户名 -p密码 -d 数据库名 > 导出文件名
 
 # 导出表结构和数据
-mysqldump -u用户名 -p密码 数据库名 表名 > 导出文件名
+mysqldump -h 数据库链接 -u用户名 -p密码 数据库名 表名 > 导出文件名
+
+# 导出表接口和部分数据
+mysqldump -h 数据库链接 -u用户名 -p密码 数据库名 表名 --where="sql条件" > 导出文件名
 
 # 导出数据库所有表和数据
-mysqldump -u用户名 -p密码 数据库名 > 导出文件名
+mysqldump -h 数据库链接 -u用户名 -p密码 数据库名 > 导出文件名
 
 # 如果要导出多个表，则在数据库表名后填写表名列表
-mysqldump -u用户名 -p密码 数据库名 表名1 表名2 表名3 > 导出文件名
+mysqldump -h 数据库链接 -u用户名 -p密码 数据库名 表名1 表名2 表名3 > 导出文件名
 ```
 
 
@@ -131,3 +134,69 @@ GRANT ALL PRIVILEGES ON `video_buddy_config`.* TO 'watchnow'@'%'
 ```
 
  
+
+### 查询表是否被锁
+
+https://blog.csdn.net/szxiaohe/article/details/79247672
+
+https://blog.csdn.net/yucaifu1989/article/details/79400446
+
+
+
+查看死锁sql语句，分析索引情况。
+
+```mysql
+show engine innodb status\G
+```
+
+
+
+查看死锁占用时间长的sql语句。
+
+```mysql
+show status like '%lock%'
+```
+
+
+
+
+
+1. 查看表是否被锁。
+
+   ```mysql
+   show OPEN TABLES where In_use>0;
+   ```
+
+   这个语句记录当前锁表状态。
+
+2. 查看进程
+
+   ```mysql
+   show processlist
+   show full processlist
+   ```
+
+3. 查询事务
+
+   ```mysql
+   # 查看正在锁的事物
+   SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCKS;
+   
+   # 查看等待锁的事务
+   SELECT * FROM INFORMATION_SCHEMA.INNODB_LOCK_WAITS;
+   ```
+
+4. 查看死锁状态
+
+   ```sh
+   show full processlist;
+   show engine innodb status\G;
+   USE INFORMATION_SCHEMA
+   select * from information_schema.INNODB_TRX;
+   
+   mysql> kill <thread_id>
+   ```
+
+5. s
+
+   
