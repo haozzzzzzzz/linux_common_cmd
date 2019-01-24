@@ -10,6 +10,10 @@ https_proxy=http://xxx:xxx
 no_proxy=localhost,127.0.0.1
 export all_proxy
 ..
+
+# socks
+http_proxy=socks5://xxx:xxx
+...
 ```
 
 
