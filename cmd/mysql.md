@@ -123,6 +123,14 @@ CREATE DATABASE <database_name> DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_un
 
 
 
+### 创建用户
+
+```mysql
+create user 'test'%'localhost' identified by '1234' -- 如果允许远程用户则将localhost改成%
+```
+
+
+
 ### 数据库用户授权
 
 ```shell
@@ -133,7 +141,9 @@ SHOW GRANTS FOR <用户名>
 GRANT ALL PRIVILEGES ON `video_buddy_config`.* TO 'watchnow'@'%'
 ```
 
- 
+- https://blog.csdn.net/anzhen0429/article/details/78296814
+
+
 
 ### 查询表是否被锁
 
