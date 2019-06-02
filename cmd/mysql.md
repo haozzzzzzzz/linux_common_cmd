@@ -126,10 +126,10 @@ CREATE DATABASE <database_name> DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_un
 ### 创建用户
 
 ```mysql
-create user 'test'%'localhost' identified by '1234' -- 如果允许远程用户则将localhost改成%
+create user 'test'@'localhost' identified by '1234' -- 如果允许远程用户则将localhost改成%
 ```
 
-
+- https://blog.csdn.net/u011120248/article/details/79983250
 
 ### 数据库用户授权
 
@@ -137,8 +137,11 @@ create user 'test'%'localhost' identified by '1234' -- 如果允许远程用户�
 # 查看授权
 SHOW GRANTS FOR <用户名>
 
-# 授权
+# 授权。所有权限
 GRANT ALL PRIVILEGES ON `video_buddy_config`.* TO 'watchnow'@'%'
+
+# 只读权限
+GRANT SELECT ON `video_buddy_config`.* TO 'watchnow'@'%'
 ```
 
 - https://blog.csdn.net/anzhen0429/article/details/78296814
