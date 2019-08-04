@@ -148,6 +148,10 @@ GRANT SELECT ON `video_buddy_config`.* TO 'watchnow'@'%'
 
 
 
+- 如果想要授权给其他用户，需要加`WITH GRANT OPTION`.https://www.cnblogs.com/zeroone/articles/2298942.html
+
+
+
 ### 查询表是否被锁
 
 https://blog.csdn.net/szxiaohe/article/details/79247672
