@@ -86,6 +86,18 @@ eeooff
 
 
 
+ssh-add只是临时驾到keychain，如果想永久生效，可以将key添加到.ssh/config里。如果是git的ssh，不用填user
+
+```
+HOST xxx
+  USER xx
+  Identityfile xxx
+```
+
+
+
+
+
 **socks代理**
 
 ```sh

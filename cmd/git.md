@@ -97,3 +97,16 @@ git checkout <文件名> # 使用远程文件
 
 ```
 
+
+
+## gitconfig
+
+```
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+    
+将git中所有的http请求替换成ssh的请求
+```
+
+
+
